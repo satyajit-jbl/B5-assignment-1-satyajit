@@ -66,4 +66,40 @@ function formatString(input: string, toUpper?: boolean): string {
   console.log(myCar.getInfo());
   console.log(myCar.getModel());
   
+  function processValue(value: string | number): number{
+    if(typeof value === "string"){
+        return value.length;
+    } else {
+        return value *2;
+    }
+  }
+  console.log(processValue("hello"));
+  console.log(processValue(10));
+
+
+  interface Product {
+    name: string;
+    price: number;
+  }
   
+  function getMostExpensiveProduct(products: Product[]): Product | null{
+    if(products.length === 0){
+        return null;
+    }
+    let mostExpensive = products[0];
+
+    for(const product of products){
+        if(product.price > mostExpensive.price){
+            mostExpensive = product;
+        }  
+    }
+    return mostExpensive;
+  }
+
+  const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+  ];
+
+  console.log(getMostExpensiveProduct(products));
