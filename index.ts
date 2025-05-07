@@ -103,3 +103,38 @@ function formatString(input: string, toUpper?: boolean): string {
   ];
 
   console.log(getMostExpensiveProduct(products));
+
+  enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+  }
+  
+  function getDayType(day: Day): string{
+    if(day === Day.Saturday || day === Day.Sunday){
+        return "Weekend";
+    } else { return "Weekday";}
+  }
+
+  console.log(getDayType(Day.Monday));
+  console.log(getDayType(Day.Sunday));
+
+  async function squareAsync(n: number): Promise<number>{
+    if(n<0){
+        throw new Error("Negative number is not allowed")
+    }
+
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve(n*n)
+        }, 1000);
+       
+    })
+  }
+
+  squareAsync(4).then(console.log);
+  squareAsync(-3).catch(console.log);
