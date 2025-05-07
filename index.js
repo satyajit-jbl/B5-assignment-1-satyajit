@@ -29,3 +29,24 @@ function concatenateArrays(...arrays) {
 }
 console.log(concatenateArrays(["a", "b"], ["c"]));
 console.log(concatenateArrays([1, 2], [3, 4], [5]));
+class Vehicle {
+    constructor(make, year) {
+        this.make = make;
+        this.year = year;
+    }
+    getInfo() {
+        return `Make: ${this.make}, Year: ${this.year}`;
+    }
+}
+class Car extends Vehicle {
+    constructor(make, year, model) {
+        super(make, year);
+        this.model = model;
+    }
+    getModel() {
+        return `Model: ${this.model}`;
+    }
+}
+const myCar = new Car("Toyota", 2020, "Corolla");
+console.log(myCar.getInfo());
+console.log(myCar.getModel());
