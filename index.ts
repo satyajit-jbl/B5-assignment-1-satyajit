@@ -2,9 +2,6 @@ function formatString(input: string, toUpper?: boolean): string {
     return toUpper ? input.toUpperCase() : input.toLowerCase();
   }
   
-  console.log(formatString("Hello"));
-  console.log(formatString("Hello", true));
-  console.log(formatString("Hello", false));
 
 
   function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
@@ -15,14 +12,7 @@ function formatString(input: string, toUpper?: boolean): string {
     return items
   }
 
-  const books = [
-    { title: "Book A", rating: 4.5 },
-    { title: "Book B", rating: 3.2 },
-    { title: "Book C", rating: 5.0 }
-  ];
 
-  const result = filterByRating(books);
-  console.log(result);
 
   function concatenateArrays<T>(...arrays: T[][]): T[]{
     let result : T[] = [];
@@ -32,8 +22,6 @@ function formatString(input: string, toUpper?: boolean): string {
     return result
   }
 
-  console.log(concatenateArrays(["a", "b"], ["c"]));
-  console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 
   class Vehicle {
@@ -62,9 +50,7 @@ function formatString(input: string, toUpper?: boolean): string {
     }
   }
 
-  const myCar = new Car("Toyota", 2020, "Corolla");
-  console.log(myCar.getInfo());
-  console.log(myCar.getModel());
+
   
   function processValue(value: string | number): number{
     if(typeof value === "string"){
@@ -73,8 +59,7 @@ function formatString(input: string, toUpper?: boolean): string {
         return value *2;
     }
   }
-  console.log(processValue("hello"));
-  console.log(processValue(10));
+ 
 
 
   interface Product {
@@ -96,13 +81,7 @@ function formatString(input: string, toUpper?: boolean): string {
     return mostExpensive;
   }
 
-  const products = [
-    { name: "Pen", price: 10 },
-    { name: "Notebook", price: 25 },
-    { name: "Bag", price: 50 }
-  ];
 
-  console.log(getMostExpensiveProduct(products));
 
   enum Day {
     Monday,
@@ -120,8 +99,7 @@ function formatString(input: string, toUpper?: boolean): string {
     } else { return "Weekday";}
   }
 
-  console.log(getDayType(Day.Monday));
-  console.log(getDayType(Day.Sunday));
+ 
 
   async function squareAsync(n: number): Promise<number>{
     if(n<0){
@@ -132,9 +110,7 @@ function formatString(input: string, toUpper?: boolean): string {
         setTimeout(() => {
             resolve(n*n)
         }, 1000);
-       
     })
   }
 
-  squareAsync(4).then(console.log);
-  squareAsync(-3).catch(console.log);
+
